@@ -26,3 +26,14 @@ export default class ContactCreator extends LightningElement {
     }
 
 }
+
+    @api objectApiName = 'Contact';
+    handleSuccess(event) {
+        const evt = new ShowToastEvent({
+            title: 'Contact created',
+            message: 'Record ID: ' + event.detail.id,
+            variant: 'success',
+        });
+        this.dispatchEvent(evt);
+    }
+}
